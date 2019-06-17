@@ -2,14 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-url = 'https://us.epsilon.com/hear-from-our-clients'
+url = '' #insert what you want to enter here and change the attributes and/or attribute names accordingly below!!
 response = requests.get(url, timeout=5)
 content = BeautifulSoup(response.content, "html.parser")
 
-#new_con = content.findAll('li', attrs={"class": "hs-menu-item"})
-#
-#for x in new_con:
-#    print(x.find('a').text)
 
 info_client = []
 for info in content.findAll('div', attrs={"class": "video-item"}):
